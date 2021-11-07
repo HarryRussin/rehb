@@ -3,7 +3,7 @@ class Player{
         this.size = pSize
         this.x = floor(random(width))
         this.y = floor(random(height))
-        this.vel = 3
+        this.vel = 4
     }
 
     move(x,y){
