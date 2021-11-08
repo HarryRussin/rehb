@@ -8,6 +8,7 @@ let maxfoodVel = 1.5
 let score = 0
 let increment = 1
 let player;
+let mossmode;
 
 let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -24,6 +25,7 @@ function setup() {
   createCanvas(800, 700);
   frameRate()
   player = new Player
+  mossmode = createCheckbox('moss mode',false)
 
   for (let i = 0; i < startFoodCount; i++) {
     food[i] = new Food

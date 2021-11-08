@@ -5,6 +5,7 @@ let count = 0
 let swapped;
 let swaps = 0
 let frames;
+let cycles = 2
 
 function setup() {
   createCanvas(700, 400);
@@ -22,9 +23,13 @@ function setup() {
 
 function draw() {
   frameRate(frames.value())
-  do{
-    swapped = false
-    for (let h = 0; h < bubbles.length; h++) {
+  for (let k = 0; k < cycles; k++) {
+    
+    
+  
+  for (let j = 0; j < bubbles.length; j++) {
+    
+    for (let h = 0; h < bubbles.length-j; h++) {
         if (bubbles[h]>bubbles[h+1]) {
           let temp = bubbles[h]
           bubbles[h] = bubbles[h+1]
@@ -35,7 +40,6 @@ function draw() {
         }
     }
   }
-  while(swapped)
   
   background(255)
   count++
@@ -50,5 +54,5 @@ function draw() {
       fill(220)
       rect(i*colSize,height,colSize,bubbles[i]*-1)
   }
-}
+}}
 }
