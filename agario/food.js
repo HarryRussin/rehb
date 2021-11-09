@@ -27,11 +27,14 @@ class Food {
     }
 
     show() {
-        if (this.size > player.size) {
-            this.color = 'red'
-        } else {
-            this.color = 'lightgreen'
+        if (mossMode.checked()) {
+            if (this.size > player.size) {
+                this.color = 'red'
+            } else {
+                this.color = 'lightgreen'
+            }
         }
+
         fill(this.color)
         ellipse(this.x, this.y, this.size)
     }

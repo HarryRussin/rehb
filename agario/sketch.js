@@ -8,6 +8,7 @@ let maxfoodVel = 1.5
 let score = 0
 let increment = 1
 let mouseControls;
+let mossMode;
 
 let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -22,7 +23,8 @@ let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 
 function setup() {
   createCanvas(800, 700);
-  mouseControls = createCheckbox('use mouse controls',false)
+  mossMode = createCheckbox('moss mode',true)
+  mouseControls = createCheckbox('mouse mode',false)
   frameRate()
   player = new Player
 
