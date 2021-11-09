@@ -3,7 +3,7 @@ class Player{
         this.size = pSize
         this.x = floor(random(width))
         this.y = floor(random(height))
-        this.vel = 4
+        this.vel = 5
     }
 
     move(x,y){
@@ -25,5 +25,9 @@ class Player{
        background(220)
        text(`you died! your score was ${score}`,(width/2)-300,height/2)
        noLoop()
+   }
+   moveWithMouse(){
+       this.x = mouseX
+       this.y = mouseY
    }
 }

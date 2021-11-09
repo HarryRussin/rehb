@@ -3,12 +3,11 @@ let pSize = 30
 let food = []
 let minfoodSize = 5
 let maxfoodSize = 100;
-let minfoodVel = 0.5
+let minfoodVel = 1
 let maxfoodVel = 1.5
 let score = 0
 let increment = 1
-let player;
-let mossmode;
+let mouseControls;
 
 let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -23,13 +22,14 @@ let colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 
 function setup() {
   createCanvas(800, 700);
+  mouseControls = createCheckbox('use mouse controls',false)
   frameRate()
   player = new Player
-  mossmode = createCheckbox('moss mode',false)
 
   for (let i = 0; i < startFoodCount; i++) {
     food[i] = new Food
   }
+
 }
 
 function draw() {
@@ -57,6 +57,10 @@ function draw() {
   }
 
   player.show()
+  if (mouseControls.checked()){
+    console.log(mouseControls.checked());
+    player.moveWithMouse()
+  }else{
 
   if (keyIsDown(65)) {
     player.move(-1,0);
@@ -74,7 +78,23 @@ function draw() {
     player.move(0,1);
   }
 
+  if (keyIsDown(LEFT_ARROW)) {
+    player.move(-1,0);
+  }
+
+  if (keyIsDown(RIGHT_ARROW)) {
+    player.move(1,0);
+  }
+
+  if (keyIsDown(UP_ARROW)) {
+    player.move(0,-1);
+  }
+
+  if (keyIsDown(DOWN_ARROW)) {
+    player.move(0,1);
+  }
+
   textSize(30)
   text(score,10,30)
-}
+}}
 
