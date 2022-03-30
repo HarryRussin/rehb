@@ -2,11 +2,11 @@ var minslider;
 var maxslider
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(500, 500);
   pixelDensity(1)
   loadPixels()
-  minslider = createSlider(-2.5,5,-2.5,0.01)
-  maxslider = createSlider(-2.5,5,2.5,0.01)
+  minslider = createSlider(-2.5,5,2.5,0.01)
+  maxslider = createSlider(-2.5,5,-2,0.01)
 }
 
 function draw() {
